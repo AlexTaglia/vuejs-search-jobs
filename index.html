@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google" content="notranslate" /> 
+    <meta name="google" content="notranslate" />
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -16,7 +16,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/style.css">
-    
+
     <title>VueJs Search Job</title>
 </head>
 
@@ -27,11 +27,24 @@
 
         <!-- App -->
         <div id="app">
-            <div class="job-container">
+            <nav>
+                <ul>
+                    <li><a href="#pos1">All Job</a></li>
+                    <li><a href="#pos2">My favorites</a></li>
+                    <li><a href="#pos3">Application sent</a></li>
+                </ul>
+            </nav>
+
+            <div id="pos1" class="job-container">
+                <h1>All Job</h1>
                 <ul v-for="(advertise, index) in jobs" class="job-adv mt-4">
                     <li><img class="logo" :src="advertise.logo" alt="logo"></li>
-                    <li><h3>{{advertise.position}}</h3></li>
-                    <li><h5>{{advertise.company}}</h5></li>
+                    <li>
+                        <h3>{{advertise.position}}</h3>
+                    </li>
+                    <li>
+                        <h5>{{advertise.company}}</h5>
+                    </li>
                     <li>{{advertise.city}} - Contratto: {{advertise.contract}}</li>
                     <li>Descrizione lavoro: {{advertise.description}}</li>
                     <li></li>
@@ -39,7 +52,53 @@
                     <li>Pubblicato il: {{advertise.created_at}}</li>
                     <li class="application mt-3 mb-3">
                         <button @click="addToApplied(index)" :class="hideApplyButton(index)">Candidati</button>
-                        <div :class="showApplyBadge(index)" ><i class="fas fa-check"></i> Applied</div>
+                        <div :class="showApplyBadge(index)"><i class="fas fa-check"></i> Applied</div>
+                    </li>
+                    <li><i @click="addToStarred(index)" :class="inclededInStarred(index)"></i></li>
+                </ul>
+            </div>
+
+            <div id="pos2" class="job-container">
+                <h1 class="mt-5">My favorites</h1>
+                <ul v-for="(advertise, index) in jobs" v-if="starred.includes(advertise.id)" class="job-adv mt-4">
+                    <li><img class="logo" :src="advertise.logo" alt="logo"></li>
+                    <li>
+                        <h3>{{advertise.position}}</h3>
+                    </li>
+                    <li>
+                        <h5>{{advertise.company}}</h5>
+                    </li>
+                    <li>{{advertise.city}} - Contratto: {{advertise.contract}}</li>
+                    <li>Descrizione lavoro: {{advertise.description}}</li>
+                    <li></li>
+                    <li>Id annuncio: {{advertise.id}}</li>
+                    <li>Pubblicato il: {{advertise.created_at}}</li>
+                    <li class="application mt-3 mb-3">
+                        <button @click="addToApplied(index)" :class="hideApplyButton(index)">Candidati</button>
+                        <div :class="showApplyBadge(index)"><i class="fas fa-check"></i> Applied</div>
+                    </li>
+                    <li><i @click="addToStarred(index)" :class="inclededInStarred(index)"></i></li>
+                </ul>
+            </div>
+
+            <div id="pos3" class="job-container">
+                <h1 class="mt-5">Application sent</h1>
+                <ul v-for="(advertise, index) in jobs" v-if="applied.includes(advertise.id)" class="job-adv mt-4">
+                    <li><img class="logo" :src="advertise.logo" alt="logo"></li>
+                    <li>
+                        <h3>{{advertise.position}}</h3>
+                    </li>
+                    <li>
+                        <h5>{{advertise.company}}</h5>
+                    </li>
+                    <li>{{advertise.city}} - Contratto: {{advertise.contract}}</li>
+                    <li>Descrizione lavoro: {{advertise.description}}</li>
+                    <li></li>
+                    <li>Id annuncio: {{advertise.id}}</li>
+                    <li>Pubblicato il: {{advertise.created_at}}</li>
+                    <li class="application mt-3 mb-3">
+                        <button @click="addToApplied(index)" :class="hideApplyButton(index)">Candidati</button>
+                        <div :class="showApplyBadge(index)"><i class="fas fa-check"></i> Applied</div>
                     </li>
                     <li><i @click="addToStarred(index)" :class="inclededInStarred(index)"></i></li>
                 </ul>

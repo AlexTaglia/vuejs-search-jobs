@@ -105,7 +105,8 @@ new Vue(
                 } else {
                     return 'd-none'
                 }
-            }
+            },
+            
         },
 
 
