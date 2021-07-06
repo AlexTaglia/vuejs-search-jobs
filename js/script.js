@@ -65,28 +65,42 @@ new Vue(
 
         // -----------------------------
         methods: {
+            //Funzione per ritorna un cuore pieno 
+            //se l'id dell'annncio è inclueso in array starred
             inclededInStarred: function(index){
-                if(this.starred.includes(index + 1)){
+                if(this.starred.includes(this.jobs[index].id)){
                     return 'fas fa-heart'
                 } else {
                     return 'far fa-heart'
                 }
             },
+
+            //Funzione che aggiunge l'id dell'annuncio a array starred
             addToStarred: function(index){
-                this.starred.push(index + 1)
+                this.starred.push(this.jobs[index].id)
+                console.log(this.starred);
             },
+
+            //Funzione che aggiunge l'id dell'annuncio a array applied
             addToApplied: function(index){
-                this.applied.push(index + 1)
+                this.applied.push(this.jobs[index].id)
+                console.log(this.applied);
             },
+
+            //Funzione che nasconde il button "Candidati"
+            //se si è gia candidati all'annuncio 
             hideApplyButton: function(index){
-                if(this.applied.includes(index + 1)){
+                if(this.applied.includes(this.jobs[index].id)){
                     return 'd-none'
                 } else {
                     return ''
                 }
             },
+
+            //Funzione che mostra il il badge se si è gia inviata
+            //la candidatura
             showApplyBadge: function(index){
-                if(this.applied.includes(index + 1)){
+                if(this.applied.includes(this.jobs[index].id)){
                     return ''
                 } else {
                     return 'd-none'

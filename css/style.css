@@ -1,9 +1,27 @@
+.container{
+    width: 50%;
+}
+
+.job-container ul{
+    border: 1px solid lightgray;
+    box-shadow: 0 0 10px 1px lightgray;
+
+    border-radius: 20px;
+    padding: 24px
+}
+
 .logo{
     width: 40px;
 }
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
 ul li{
     list-style: none;
-    padding: 6px 0;
+    padding: 4px 0;
 }
 .fas.fa-heart {
     color: red;
@@ -12,6 +30,15 @@ ul li{
 
 .fas.fa-check {
     color: green;
+}
+
+button {
+    border: 0;
+    box-shadow: 0 0 10px 1px lightgray;
+}
+
+.application {
+    line-height: 30px;
 }
 
 
