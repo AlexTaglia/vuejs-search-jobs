@@ -60,3 +60,17 @@ nav li{
     padding: 10px 30px;
     background-color: rgba(240, 236, 236, 0.9);
 }
+
+.pointer{
+    cursor: pointer;
+    color: rgb(155, 155, 155);
+    font-size: 14px;
+    padding-left: 14px;
+
+}
+
+.to-top{
+    position: fixed;
+    bottom: 50px;
+    left: 50px;
+}

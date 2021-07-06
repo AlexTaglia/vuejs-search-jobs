@@ -65,10 +65,10 @@ new Vue(
 
         // -----------------------------
         methods: {
-            //Funzione per ritorna un cuore pieno 
-            //se l'id dell'annncio è inclueso in array starred
-            inclededInStarred: function(index){
-                if(this.starred.includes(this.jobs[index].id)){
+            //Funzione per ritornare un cuore pieno 
+            //se l'id dell'annncio è incluso in array starred
+            includedInStarred: function (index) {
+                if (this.starred.includes(this.jobs[index].id)) {
                     return 'fas fa-heart'
                 } else {
                     return 'far fa-heart'
@@ -76,28 +76,35 @@ new Vue(
             },
 
             //Funzione che aggiunge l'id dell'annuncio a array starred
-            addToStarred: function(index){
+            addToStarred: function (index) {
                 this.starred.push(this.jobs[index].id)
                 console.log(this.starred);
             },
 
+            //Funzione che se abbiamo inviato la candidatura lo 
+            //rimuove da starred
+            removeFromStarred: function (array, value) {
+                let index = array.indexOf(value);
+                array.splice(index, 1);
+            },
+
             //Funzione che aggiunge l'id dell'annuncio a array applied
-            addToApplied: function(index){
+            addToApplied: function (index) {
                 this.applied.push(this.jobs[index].id)
                 console.log(this.applied);
-                
+
                 //dopo un secondo cambia lo stato dell'applicationSent in true
                 //cosi viene mostrata nell'html
-                setTimeout(()=>{
+                setTimeout(() => {
                     this.applicationSent = true
-                },1000)
+                }, 1000)
                 this.hideNotification()
             },
 
             //Funzione che nasconde il button "Candidati"
             //se si è gia candidati all'annuncio 
-            hideApplyButton: function(index){
-                if(this.applied.includes(this.jobs[index].id)){
+            hideApplyButton: function (index) {
+                if (this.applied.includes(this.jobs[index].id)) {
                     return 'd-none'
                 } else {
                     return ''
@@ -106,8 +113,8 @@ new Vue(
 
             //Funzione che mostra il il badge se si è gia inviata
             //la candidatura
-            showApplyBadge: function(index){
-                if(this.applied.includes(this.jobs[index].id)){
+            showApplyBadge: function (index) {
+                if (this.applied.includes(this.jobs[index].id)) {
                     return ''
                 } else {
                     return 'd-none'
@@ -116,12 +123,13 @@ new Vue(
 
             //dopo un'altro secondo ricambia lo stato dell'applicationSent 
             //in false cosi viene nascosta nell'html
-            hideNotification: function(){
-                setTimeout(()=>{
+            hideNotification: function () {
+                setTimeout(() => {
                     this.applicationSent = false
-                },2000)             
-            }
-            
+                }, 2000)
+            },
+
+
         },
 
 

@@ -27,7 +27,7 @@
 
         <!-- App -->
         <div id="app">
-            <nav>
+            <nav id="pos0">
                 <ul>
                     <li><a href="#pos1">All Job</a></li>
                     <li><a href="#pos2">My favorites</a></li>
@@ -38,6 +38,8 @@
             <div v-if="applicationSent" class="application-sent">
                 Application sent
             </div>
+
+            <!-- ALL JOB -->
 
             <div id="pos1" class="job-container">
                 <h1>All Job</h1>
@@ -55,13 +57,20 @@
                     <li>Id annuncio: {{advertise.id}}</li>
                     <li>Pubblicato il: {{advertise.created_at}}</li>
                     <li class="application mt-3 mb-3">
-                        <button @click="addToApplied(index)" :class="hideApplyButton(index)">Candidati</button>
+                        <button @click="addToApplied(index); removeFromStarred(starred, advertise.id)"
+                            :class="hideApplyButton(index)">Candidati</button>
                         <div :class="showApplyBadge(index)"><i class="fas fa-check"></i> Applied</div>
                     </li>
-                    <li><i @click="addToStarred(index)" :class="inclededInStarred(index)"></i></li>
+                    <li>
+                        <i @click="addToStarred(index)" :class="includedInStarred(index)"></i>
+                        <span class="pointer" v-if="starred.includes(advertise.id)"
+                            @click="removeFromStarred(starred, advertise.id)"> Rimuovi dai preferiti </span>
+                    </li>
+
                 </ul>
             </div>
 
+            <!-- MY favorites -->
             <div id="pos2" class="job-container">
                 <h1 class="mt-5">My favorites</h1>
                 <ul v-for="(advertise, index) in jobs" v-if="starred.includes(advertise.id)" class="job-adv mt-4">
@@ -78,13 +87,19 @@
                     <li>Id annuncio: {{advertise.id}}</li>
                     <li>Pubblicato il: {{advertise.created_at}}</li>
                     <li class="application mt-3 mb-3">
-                        <button @click="addToApplied(index)" :class="hideApplyButton(index)">Candidati</button>
+                        <button @click="addToApplied(index); removeFromStarred(starred, advertise.id) "
+                            :class="hideApplyButton(index)">Candidati</button>
                         <div :class="showApplyBadge(index)"><i class="fas fa-check"></i> Applied</div>
                     </li>
-                    <li><i @click="addToStarred(index)" :class="inclededInStarred(index)"></i></li>
+                    <li>
+                        <i @click="addToStarred(index)" :class="includedInStarred(index)"></i>
+                        <span class="pointer" v-if="starred.includes(advertise.id)"
+                            @click="removeFromStarred(starred, advertise.id)"> Rimuovi dai preferiti </span>
+                    </li>
                 </ul>
             </div>
 
+            <!-- Application sent -->
             <div id="pos3" class="job-container">
                 <h1 class="mt-5">Application sent</h1>
                 <ul v-for="(advertise, index) in jobs" v-if="applied.includes(advertise.id)" class="job-adv mt-4">
@@ -101,13 +116,23 @@
                     <li>Id annuncio: {{advertise.id}}</li>
                     <li>Pubblicato il: {{advertise.created_at}}</li>
                     <li class="application mt-3 mb-3">
-                        <button @click="addToApplied(index)" :class="hideApplyButton(index)">Candidati</button>
+                        <button @click="addToApplied(index); removeFromStarred(starred, advertise.id) "
+                            :class="hideApplyButton(index)">Candidati</button>
                         <div :class="showApplyBadge(index)"><i class="fas fa-check"></i> Applied</div>
                     </li>
-                    <li><i @click="addToStarred(index)" :class="inclededInStarred(index)"></i></li>
+                    <li>
+                        <i @click="addToStarred(index)" :class="includedInStarred(index)"></i>
+                        <span class="pointer" v-if="starred.includes(advertise.id)"
+                            @click="removeFromStarred(starred, advertise.id)"> Rimuovi dai preferiti </span>
+                    </li>
                 </ul>
             </div>
 
+            <div class="to-top">
+                <a href="#pos0">
+                    <i class="fas fa-arrow-up"></i>
+                </a>
+            </div>
         </div>
 
     </div>
