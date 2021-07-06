@@ -77,8 +77,12 @@ new Vue(
 
             //Funzione che aggiunge l'id dell'annuncio a array starred
             addToStarred: function (index) {
-                this.starred.push(this.jobs[index].id)
-                console.log(this.starred);
+                if(!this.starred.includes(this.jobs[index].id) 
+                    && !this.applied.includes(this.jobs[index].id)){
+                    
+                    this.starred.push(this.jobs[index].id)
+                    console.log(this.starred);
+                }
             },
 
             //Funzione che se abbiamo inviato la candidatura lo 
