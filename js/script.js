@@ -13,7 +13,7 @@ new Vue(
                     position: 'Developer',
                     description: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure veniam similique adipisci! Perferendis odio sapiente libero quam deleniti quidem consequuntur adipisci minima non iusto, sunt optio hic. Corporis, laboriosam perferendis?',
                     created_at: '5/22/2021',
-                    logo: 'logo.jpg',
+                    logo: './img/logo.png',
                     city: 'Cesenatico',
                     contract: 'Full Time'
                 },
@@ -23,7 +23,7 @@ new Vue(
                     position: 'junior Developer',
                     description: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure veniam similique adipisci! Perferendis odio sapiente libero quam deleniti quidem consequuntur adipisci minima non iusto, sunt optio hic. Corporis, laboriosam perferendis?',
                     created_at: '2/22/2021',
-                    logo: 'logo.jpg',
+                    logo: './img/logo.png',
                     city: 'Torino',
                     contract: 'Full Time'
                 },
@@ -33,7 +33,7 @@ new Vue(
                     position: 'Front End Developer',
                     description: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure veniam similique adipisci! Perferendis odio sapiente libero quam deleniti quidem consequuntur adipisci minima non iusto, sunt optio hic. Corporis, laboriosam perferendis?',
                     created_at: '5/28/2021',
-                    logo: 'logo.jpg',
+                    logo: './img/logo.png',
                     city: 'Bologna',
                     contract: 'Full Time'
                 },
@@ -43,7 +43,7 @@ new Vue(
                     position: 'Back End Developer',
                     description: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure veniam similique adipisci! Perferendis odio sapiente libero quam deleniti quidem consequuntur adipisci minima non iusto, sunt optio hic. Corporis, laboriosam perferendis?',
                     created_at: '4/22/2021',
-                    logo: 'logo.jpg',
+                    logo: './img/logo.png',
                     city: 'Roma',
                     contract: 'Full Time'
                 },
@@ -53,7 +53,7 @@ new Vue(
                     position: 'Full stack Developer',
                     description: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure veniam similique adipisci! Perferendis odio sapiente libero quam deleniti quidem consequuntur adipisci minima non iusto, sunt optio hic. Corporis, laboriosam perferendis?',
                     created_at: '5/21/2021',
-                    logo: 'logo.jpg',
+                    logo: './img/logo.png',
                     city: 'Milano',
                     contract: 'Full Time'
                 },

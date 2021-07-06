@@ -27,6 +27,18 @@
 
         <!-- App -->
         <div id="app">
+            <div class="job-container">
+                <ul v-for="advertise in jobs" class="job-adv mb-5">
+                    <li><hr><img class="logo" :src="advertise.logo" alt="logo"></li>
+                    <li>Id annuncio: {{advertise.id}}</li>
+                    <li>Società: {{advertise.company}}</li>
+                    <li>Posizione: {{advertise.position}}</li>
+                    <li>Descrizione lavoro: {{advertise.description}}</li>
+                    <li>Pubblicato il: {{advertise.created_at}}</li>
+                    <li>Città: {{advertise.city}}</li>
+                    <li>Contratto: {{advertise.contract}}</li>
+                </ul>
+            </div>
 
 
         </div>
