@@ -35,6 +35,10 @@
                 </ul>
             </nav>
 
+            <div v-if="applicationSent" class="application-sent">
+                Application sent
+            </div>
+
             <div id="pos1" class="job-container">
                 <h1>All Job</h1>
                 <ul v-for="(advertise, index) in jobs" class="job-adv mt-4">
@@ -103,7 +107,6 @@
                     <li><i @click="addToStarred(index)" :class="inclededInStarred(index)"></i></li>
                 </ul>
             </div>
-
 
         </div>
 

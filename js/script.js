@@ -59,8 +59,8 @@ new Vue(
                 },
             ],
             starred: [2],
-            applied: [4, 5]
-
+            applied: [4, 5],
+            applicationSent: false,
         },
 
         // -----------------------------
@@ -85,6 +85,13 @@ new Vue(
             addToApplied: function(index){
                 this.applied.push(this.jobs[index].id)
                 console.log(this.applied);
+                
+                //dopo un secondo cambia lo stato dell'applicationSent in true
+                //cosi viene mostrata nell'html
+                setTimeout(()=>{
+                    this.applicationSent = true
+                },1000)
+                this.hideNotification()
             },
 
             //Funzione che nasconde il button "Candidati"
@@ -106,6 +113,14 @@ new Vue(
                     return 'd-none'
                 }
             },
+
+            //dopo un'altro secondo ricambia lo stato dell'applicationSent 
+            //in false cosi viene nascosta nell'html
+            hideNotification: function(){
+                setTimeout(()=>{
+                    this.applicationSent = false
+                },2000)             
+            }
             
         },
 
