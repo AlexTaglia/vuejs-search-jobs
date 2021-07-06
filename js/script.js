@@ -65,7 +65,16 @@ new Vue(
 
         // -----------------------------
         methods: {
+            inclededInStarred: function(index){
+                console.log(this.starred)
+                console.log(this.index)
 
+                if(this.starred.includes(index + 1)){
+                    return 'fas fa-heart'
+                } else {
+                    return 'far fa-heart'
+                }
+            }
         },
 
 

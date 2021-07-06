@@ -5,3 +5,14 @@ ul li:first-child{
     list-style: none;
 }
 
+ul li:last-child{
+    list-style: none;
+}
+
+.fas {
+    color: red;
+    cursor: pointer;
+}
+
+
+

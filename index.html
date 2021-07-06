@@ -28,7 +28,7 @@
         <!-- App -->
         <div id="app">
             <div class="job-container">
-                <ul v-for="advertise in jobs" class="job-adv mb-5">
+                <ul v-for="(advertise, index) in jobs" class="job-adv mb-5">
                     <li><hr><img class="logo" :src="advertise.logo" alt="logo"></li>
                     <li>Id annuncio: {{advertise.id}}</li>
                     <li>Società: {{advertise.company}}</li>
@@ -37,6 +37,8 @@
                     <li>Pubblicato il: {{advertise.created_at}}</li>
                     <li>Città: {{advertise.city}}</li>
                     <li>Contratto: {{advertise.contract}}</li>
+                    <li class="pt-3"><i :class="inclededInStarred(index)"></i></li>
+                    
                 </ul>
             </div>
 
