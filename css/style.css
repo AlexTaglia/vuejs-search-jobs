@@ -1,18 +1,17 @@
 .logo{
     width: 40px;
 }
-ul li:first-child{
+ul li{
     list-style: none;
+    padding: 6px 0;
 }
-
-ul li:last-child{
-    list-style: none;
-}
-
-.fas {
+.fas.fa-heart {
     color: red;
     cursor: pointer;
 }
 
+.fas.fa-check {
+    color: green;
+}
 
 

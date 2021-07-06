@@ -74,7 +74,23 @@ new Vue(
             },
             addToStarred: function(index){
                 this.starred.push(index + 1)
-                console.log(this.starred)
+            },
+            addToApplied: function(index){
+                this.applied.push(index + 1)
+            },
+            hideApplyButton: function(index){
+                if(this.applied.includes(index + 1)){
+                    return 'd-none'
+                } else {
+                    return ''
+                }
+            },
+            showApplyBadge: function(index){
+                if(this.applied.includes(index + 1)){
+                    return ''
+                } else {
+                    return 'd-none'
+                }
             }
         },
 
