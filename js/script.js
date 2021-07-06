@@ -58,7 +58,7 @@ new Vue(
                     contract: 'Full Time'
                 },
             ],
-            starred: [1, 2, 3],
+            starred: [2],
             applied: [4, 5]
 
         },
@@ -66,14 +66,15 @@ new Vue(
         // -----------------------------
         methods: {
             inclededInStarred: function(index){
-                console.log(this.starred)
-                console.log(this.index)
-
                 if(this.starred.includes(index + 1)){
                     return 'fas fa-heart'
                 } else {
                     return 'far fa-heart'
                 }
+            },
+            addToStarred: function(index){
+                this.starred.push(index + 1)
+                console.log(this.starred)
             }
         },
 

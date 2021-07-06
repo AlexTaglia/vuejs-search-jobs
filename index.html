@@ -37,8 +37,7 @@
                     <li>Pubblicato il: {{advertise.created_at}}</li>
                     <li>Città: {{advertise.city}}</li>
                     <li>Contratto: {{advertise.contract}}</li>
-                    <li class="pt-3"><i :class="inclededInStarred(index)"></i></li>
-                    
+                    <li class="pt-3"><i @click="addToStarred(index)" :class="inclededInStarred(index)"></i></li>
                 </ul>
             </div>
 
